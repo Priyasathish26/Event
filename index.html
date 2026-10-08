@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ApexFest 2026 - Annual College Cultural & Tech Fest">
+  <title>ApexFest 2026 | College Cultural & Tech Fest</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#home" class="logo">Apex<span>Fest</span> '26</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="nav-links" class="nav-links">
+        <li><a href="#events">Events</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#announcements">Updates</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#register" class="btn btn-small">Register</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">Annual Cultural &amp; Tech Fest</p>
+        <h1>Apex<span>Fest</span> 2026</h1>
+        <p class="hero-dates">20 – 22 November 2026 · Main Campus</p>
+        <div class="countdown" id="countdown" role="timer" aria-live="off">
+          <div><strong data-unit="days">00</strong><span>Days</span></div>
+          <div><strong data-unit="hours">00</strong><span>Hours</span></div>
+          <div><strong data-unit="minutes">00</strong><span>Minutes</span></div>
+          <div><strong data-unit="seconds">00</strong><span>Seconds</span></div>
+        </div>
+        <a href="#register" class="btn">Register Now</a>
+      </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section id="events" class="section container">
+      <h2>Events</h2>
+      <div class="tabs" role="tablist" aria-label="Filter events by category">
+        <button class="tab active" role="tab" aria-selected="true" data-filter="all">All</button>
+        <button class="tab" role="tab" aria-selected="false" data-filter="technical">Technical</button>
+        <button class="tab" role="tab" aria-selected="false" data-filter="cultural">Cultural</button>
+        <button class="tab" role="tab" aria-selected="false" data-filter="sports">Sports</button>
+      </div>
+      <div class="grid cards" id="event-grid" aria-live="polite"></div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section id="schedule" class="section alt">
+      <div class="container">
+        <h2>Schedule</h2>
+        <div class="tabs" id="day-tabs" role="tablist" aria-label="Schedule by day"></div>
+        <ol class="timeline" id="timeline"></ol>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section container">
+      <h2>Gallery</h2>
+      <p class="muted">Highlights from previous editions. Tap a tile to preview.</p>
+      <div class="gallery" id="gallery-grid"></div>
+    </section>
+
+    <!-- REGISTRATION -->
+    <section id="register" class="section alt">
+      <div class="container narrow">
+        <h2>Register</h2>
+        <form id="reg-form" novalidate>
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+            <span class="error" data-error-for="name" role="alert"></span>
+          </div>
+          <div class="field">
+            <label for="email">College email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+            <span class="error" data-error-for="email" role="alert"></span>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="department">Department</label>
+              <select id="department" name="department" required>
+                <option value="">Select department</option>
+                <option>Computer Science</option><option>Electronics</option>
+                <option>Mechanical</option><option>Civil</option>
+                <option>Business</option><option>Arts &amp; Humanities</option>
+              </select>
+              <span class="error" data-error-for="department" role="alert"></span>
+            </div>
+            <div class="field">
+              <label for="studentId">Student ID</label>
+              <input id="studentId" name="studentId" type="text" placeholder="e.g. CS2026042" required>
+              <span class="error" data-error-for="studentId" role="alert"></span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="event">Selected event</label>
+              <select id="event" name="event" required><option value="">Select event</option></select>
+              <span class="error" data-error-for="event" role="alert"></span>
+            </div>
+            <div class="field">
+              <label for="size">T-shirt size</label>
+              <select id="size" name="size" required>
+                <option value="">Select size</option>
+                <option>S</option><option>M</option><option>L</option><option>XL</option><option>XXL</option>
+              </select>
+              <span class="error" data-error-for="size" role="alert"></span>
+            </div>
+          </div>
+          <button type="submit" class="btn">Submit registration</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ANNOUNCEMENTS -->
+    <section id="announcements" class="section container">
+      <h2>Live Updates</h2>
+      <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker-track"></div></div>
+      <div class="grid cards" id="feed" aria-live="polite"></div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section alt">
+      <div class="container contact-grid">
+        <div>
+          <h2>Contact</h2>
+          <address>
+            ApexFest Organising Committee<br>
+            Student Activity Centre, Main Campus<br>
+            <a href="mailto:apexfest@college.edu">apexfest@college.edu</a><br>
+            <a href="tel:+910000000000">+91 00000 00000</a>
+          </address>
+        </div>
+        <div class="map" id="map">
+          <button class="btn btn-outline" id="load-map">📍 Load interactive map</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 ApexFest · Made with ♥ by the student council</p>
+      <nav aria-label="Footer navigation">
+        <a href="#events">Events</a><a href="#schedule">Schedule</a><a href="#register">Register</a>
+      </nav>
+      <div class="social">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="X / Twitter">X</a>
+        <a href="#" aria-label="YouTube">YouTube</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SHARED MODAL (lightbox + success message) -->
+  <dialog id="modal" aria-labelledby="modal-title">
+    <button class="modal-close" aria-label="Close dialog">×</button>
+    <div id="modal-body"></div>
+  </dialog>
+</body>
+</html>
